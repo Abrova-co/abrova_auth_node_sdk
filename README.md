@@ -61,8 +61,7 @@ calls `getTokenResult({ forceRefresh: true })`. Abrova Sync rules read it as `au
 - `setCustomUserClaims` **replaces** all of the user's claims. `null` or `{}` removes them. To add one, read them with
   `getUser`, change them and write them back.
 - Values are JSON: text, numbers, true / false, null, lists and objects, nested at most 5 levels, at most 1000 bytes.
-- Some names are taken by the token itself and are refused, for example `sub`, `exp`, `iat`, `auth_time`, `amr`, `pid`,
-  `meta`.
+- Some names are taken by the token itself and are refused, for example `sub`, `exp`, `iat`, `auth_time` and `amr`.
 - A token is signed, not encrypted: the app can read it. Put roles, plans and ids in claims, never e-mails, phone
   numbers or secrets.
 
