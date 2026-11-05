@@ -1,0 +1,62 @@
+{
+  "name": "@abrova/auth-admin",
+  "version": "0.1.0",
+  "description": "Abrova Auth admin SDK for your server: custom claims, users and sessions (the Firebase Admin SDK model)",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "prebuild": "node scripts/gen-version.mjs",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "pretypecheck": "node scripts/gen-version.mjs",
+    "typecheck": "tsc --noEmit",
+    "pretest": "node scripts/gen-version.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "auth",
+    "custom-claims",
+    "admin",
+    "abrova",
+    "abrova-auth"
+  ],
+  "author": "Abrova <support@abrova.ir>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abrova-co/abrova_auth_node_sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Abrova-co/abrova_auth_node_sdk/issues"
+  },
+  "homepage": "https://abrova.ir/docs/auth/admin-sdk",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.0",
+    "vitest": "^1.6.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
